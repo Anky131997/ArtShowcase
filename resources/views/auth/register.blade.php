@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" enctype="multipart/form-data" action="{{ route('register') }}">
                         @csrf
 
                         <div class="row mb-3">
@@ -120,6 +120,19 @@
                                 <input id="facebook" type="text" class="form-control @error('email') is-invalid @enderror" name="facebook" value="facebook" required autocomplete="facebook">
 
                                 @error('facebook')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <label for="image" class="col-md-4 col-form-label text-md-end">Upload Your Photo</label>
+                            <div class="col-md-6">
+                                <input type="file" name="image" id="image" class="form-control @error('image') is-invalid @enderror">
+                                
+                                @error('image')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

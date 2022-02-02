@@ -65,6 +65,9 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $requestImage= $data['image'];
+        $image= $requestImage->store('users');
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -74,6 +77,7 @@ class RegisterController extends Controller
             'insta' => $data['insta'],
             'youtube' => $data['youtube'],
             'facebook' => $data['facebook'],
+            'image' => $image,
             'password' => Hash::make($data['password']),
         ]);
     }

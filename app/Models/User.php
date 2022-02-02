@@ -26,6 +26,7 @@ class User extends Authenticatable
         'insta',
         'youtube',
         'facebook',
+        'image',
         'password',
     ];
 

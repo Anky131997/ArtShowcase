@@ -29,6 +29,7 @@ class UserTableSeeder extends Seeder
                 'insta' => '',
                 'youtube' => '',
                 'facebook' => '',
+                'image' => '',
                 'role' => 'admin',
                 'password' => Hash::make('password')
             ]);

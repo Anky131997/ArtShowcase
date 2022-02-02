@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('insta');
             $table->string('youtube');
             $table->string('facebook');
+            $table->string('image');
             $table->enum('role', ['artist','admin'])->default('artist');
             $table->string('password');
             $table->rememberToken();
