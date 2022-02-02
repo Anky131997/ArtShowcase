@@ -20,6 +20,12 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'age',
+        'gender',
+        'number',
+        'insta',
+        'youtube',
+        'facebook',
         'password',
     ];
 
@@ -41,4 +47,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tattoos(){
+        return $this->hasMany(Tattoo::class);
+    }
 }

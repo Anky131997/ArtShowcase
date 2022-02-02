@@ -28,7 +28,8 @@ class CreateTattooRequest extends FormRequest
             'description' => 'required',
             'image' => 'required | image',
             'color' => 'required',
-            'type' => 'required'
+            'type' => 'required',
+            'artist' => 'required'
         ];
     }
 }

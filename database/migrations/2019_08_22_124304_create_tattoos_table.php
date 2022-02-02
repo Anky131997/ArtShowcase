@@ -20,6 +20,7 @@ class CreateTattoosTable extends Migration
             $table->string('image');
             $table->string('color');
             $table->integer('type_id');
+            $table->integer('artist_id');
             $table->timestamps();
         });
     }

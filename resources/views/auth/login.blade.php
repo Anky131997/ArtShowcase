@@ -67,6 +67,7 @@
                     </form>
                 </div>
             </div>
+            <div class="text-center pt-3">Not a Registered Artist yet? <a href="{{ route('register') }}" class="text-primary">Sign Up </a> Now!</div>
         </div>
     </div>
 </div>

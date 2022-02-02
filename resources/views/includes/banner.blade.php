@@ -1,4 +1,4 @@
-                <div class="col-md-12" style="background-image:url({{ asset('storage/banner.jpg') }}); background-repeat:no-repeat; background-size: cover; ">
+                <div class="col-md-12" style="background-image:url({{ asset('storage/banner.png') }}); background-repeat:no-repeat; background-size: cover; ">
                     <div class="row">
                         <div class="col-md-12 mb-5 pt-4 px-4">
                             <a id="sidebarCollapse" >
@@ -14,6 +14,7 @@
                                             <i class="fas fa-user"></i> {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                            <a href="{{ route('profile') }}" class="dropdown-item">Profile</a>
                                             <a class="dropdown-item" href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                             document.getElementById('logout-form').submit();">
@@ -24,16 +25,14 @@
                                             </form>
                                         </div>        
                                     @else
-                                        <a href="{{ route('login') }}" class="text-white mx-4"><i class="fas fa-sign-in-alt"></i> <strong>Login</strong> </a>  
-                                        @if (Route::has('register'))
-                                            <a href="{{ route('register') }}" class="text-white"><i class="fas fa-paper-plane"></i> <strong>Register</strong></a>
-                                        @endif
+                                        <a href="{{ route('login') }}" class="text-white"><i class="fas fa-sign-in-alt"></i> <strong>Login</strong> </a>
+                                        <a href="@if (Route::has('register')) {{ route('register') }} @else {{ url('/upload') }} @endif" class="text-white mx-4"><i class="fas fa-upload"></i> <strong>Upload</strong> </a>
                                     @endauth         
                                 @endif
                             </div>
                         </div>
                         <div class="col-md-12 mt-2 text-center">
-                            <h2 class="text-white" style="font-family:backToBack;">Artifice</h2>
+                            <h2 class="text-white" style="font-family:backToBack;">Artgalore</h2>
                             <h5 class="text-white mt-3">Do Something Creative Everyday</h5>
                         </div>
                         <div class="col-md-12 mt-5 mb-5 text-center">

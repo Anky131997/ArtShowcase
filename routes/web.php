@@ -31,6 +31,8 @@ Route::get('/upload', [UploadController::class, 'upload'])->name('upload');
 
 Route::post('/upload', [UploadController::class, 'store']);
 
+Route::get('/profile', [UserViewController::class, 'profile'])->name('profile');
+
 Route::get('tattoos/{tattoo}',[TattooController::class, 'show'])->name('tattoo');
 
 Route::get('big-tattoos',[UserViewController::class, 'bigTattoos'])->name('bigTattoos');

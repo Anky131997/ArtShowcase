@@ -72,12 +72,6 @@
                         </select>
                     </div>
 
-                    @if(isset($tattoo))
-                        <div class="form-group">
-                            <img src="{{ asset('storage/'.$tattoo->image) }}" width=100% height=auto style="border-radius:6px;" alt="">
-                        </div>
-                    @endif
-
                     <div class="form-group">
                         <label for="image">Image</label>
                         <input type="file" name="image" id="image" class="form-control">
