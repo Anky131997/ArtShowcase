@@ -20,10 +20,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->integer('age');
             $table->enum('gender', ['male','female','others']);
-            $table->integer('number');
-            $table->string('insta');
-            $table->string('youtube');
-            $table->string('facebook');
+            $table->string('number');
+            $table->string('insta')->nullable();
+            $table->string('youtube')->nullable();
+            $table->string('facebook')->nullable();
             $table->string('image');
             $table->enum('role', ['artist','admin'])->default('artist');
             $table->string('password');

@@ -89,7 +89,7 @@
                             <label for="insta" class="col-md-4 col-form-label text-md-end">Instagram</label>
 
                             <div class="col-md-6">
-                                <input id="insta" type="text" class="form-control @error('insta') is-invalid @enderror" name="insta" value="insta" required autocomplete="insta">
+                                <input id="insta" type="text" class="form-control @error('insta') is-invalid @enderror" name="insta" value="">
 
                                 @error('insta')
                                     <span class="invalid-feedback" role="alert">
@@ -103,7 +103,7 @@
                             <label for="youtube" class="col-md-4 col-form-label text-md-end">YouTube</label>
 
                             <div class="col-md-6">
-                                <input id="youtube" type="text" class="form-control @error('youtube') is-invalid @enderror" name="youtube" value="youtube" required autocomplete="youtube">
+                                <input id="youtube" type="text" class="form-control @error('youtube') is-invalid @enderror" name="youtube" value="">
 
                                 @error('youtube')
                                     <span class="invalid-feedback" role="alert">
@@ -117,7 +117,7 @@
                             <label for="facebook" class="col-md-4 col-form-label text-md-end">Facebook</label>
 
                             <div class="col-md-6">
-                                <input id="facebook" type="text" class="form-control @error('email') is-invalid @enderror" name="facebook" value="facebook" required autocomplete="facebook">
+                                <input id="facebook" type="text" class="form-control @error('email') is-invalid @enderror" name="facebook" value="">
 
                                 @error('facebook')
                                     <span class="invalid-feedback" role="alert">

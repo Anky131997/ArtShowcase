@@ -70,7 +70,8 @@ class TattooController extends Controller
      */
     public function show(Tattoo $tattoo)
     {
-        return view('show', compact('tattoo'));
+        $artist = User::where('id', $tattoo->artist_id)->first();
+        return view('show', compact('tattoo','artist'));
     }
 
     /**

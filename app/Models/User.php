@@ -27,7 +27,7 @@ class User extends Authenticatable
         'youtube',
         'facebook',
         'image',
-        'password',
+        'password'
     ];
 
     /**

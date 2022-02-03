@@ -13,8 +13,8 @@
                                         <a href="{{ url('/home') }}" class="" style="color:#EAE7DC;"><i class="fas fa-home"></i> <strong>Home</strong> </a>
                                         <a href="{{ url('/upload') }}" class="mx-4" style="color:#EAE7DC;"><i class="fas fa-upload"></i> <strong>Upload</strong> </a>
                                         <a id="navbarDropdown" style="color:#EAE7DC;" class="dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            <img src="{{ asset('storage/'.Auth::user()->image) }}" width=40px; height=40px; id="imgborder" style="border-radius:50%;" alt="">
-                                            {{ Auth::user()->name }} <span class="caret"></span>
+                                            <img src="{{ asset('storage/'. Auth::user()->image) }}" width=40px; height=40px; id="imgborder" style="border-radius:50%;" alt="">
+                                            <span class="caret"></span>
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                             <a href="{{ route('profile') }}" class="dropdown-item">Profile</a>
