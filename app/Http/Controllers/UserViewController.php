@@ -8,24 +8,10 @@ use Auth;
 use App\Tattoo;
 use App\Type;
 use App\Models\User;
+use DB;
 
 class UserViewController extends Controller
 {
-    
-    public function bigTattoos()
-    {
-        $tattoos = Tattoo::where('type_id', 1)->get();
-
-        return view('allTattoos', compact('tattoos'));
-    }
-
-    public function smallTattoos()
-    {
-        $tattoos = Tattoo::where('type_id', 2)->get();
-        
-        return view('allTattoos', compact('tattoos'));
-    }
-
     public function contact()
     {
         return view('contact');
@@ -35,6 +21,29 @@ class UserViewController extends Controller
     {
         $user= Auth::user();
         
-        return view('profile', compact('user'));
+        $arts=Tattoo::where('artist_id', $user->id)->get();
+
+        $types= Type::all();
+
+        return view('profile', compact('user','arts','types'));
     }
+
+    public function artistProfile($id)
+    {
+        $user= User::where('id', $id)->first();
+
+        $arts=Tattoo::where('artist_id', $id)->get();
+
+        $types= Type::all();
+
+        return view('profile', compact('user','arts','types'));
+    }
+    
+    public function artists(){
+        $artists= User::where('role', 'artist')->get();
+        $types= Type::all();
+
+        return view('artists', compact('artists','types'));
+    }
+
 }

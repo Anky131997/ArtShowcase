@@ -1,5 +1,20 @@
 @extends('layouts.master')
 
+@section('css')
+
+<style>
+    @font-face{
+        font-family:whoa;
+        src:url({{ asset('fonts/whoa!.ttf') }})
+    }
+    @font-face{
+        font-family:backToBack;
+        src:url({{ asset('fonts/Back-to-Black-Bold-Demo.ttf') }})
+    }
+</style>
+
+@endsection
+
 @section('topbar')
 
 @include('includes.topbar')
@@ -9,74 +24,24 @@
 @section('content')
 
 
-  <div class="col-md-12 mt-5">
+  <div class="col-md-10 mt-5">
     <div class="card">
-        <div class="card-header">
-            <ul class="nav nav-pills text-center">
-                <li class="active"><a href="#all" class="btn btn-light mx-2">All</a></li>
-                <li><a href="#colored" class="btn btn-light mx-2">Colored</a></li>
-                <li><a href="#blandwh" class="btn btn-light mx-2">Black & White</a></li>
-            </ul>
-        </div>
+        <div class="card-header bg-secondary text-white"><strong>{{ $artType->name }} Category Artworks</strong></div>
         <div class="card-body">
             <div class="tab-content">
                 <div id="all" class="tab-pane fade show active">
                     <div class="row">
-                        @foreach($tattoos as $tattoo)
+                        @foreach($arts as $art)
                             <div class="col-md-4">
                                 <div class="card my-3 mx-3">
-                                    <img src="{{ asset('storage/'.$tattoo->image) }}" class="card-img-top" width=100% height=auto alt="">
+                                    <img src="{{ asset('storage/'.$art->image) }}" class="card-img-top" style="object-fit: cover;" width=100% height=300px alt="">
                                     <div class="card-body">
-                                        <h4 class="card-title text-center"><strong>{{ $tattoo->name }}</strong></h4>
-                                        <p class="card-text">{{ $tattoo->description }}</p>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="{{ route('tattoo', $tattoo->id )}}" class="btn btn-info float-right text-white"> <i class="far fa-eye"></i> See More</a>
+                                        <h4 class="card-title text-center"><strong>{{ $art->name }}</strong></h4>
+                                        <p class="card-text">{{ $art->description }}</p>
+                                        <a href="{{ route('tattoo', $art->id )}}" class="btn btn-info float-right text-white"> <i class="far fa-eye"></i> See More</a>
                                     </div>
                                 </div>                         
                             </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div id="colored" class="tab-pane fade">
-                    <div class="row">
-                        @foreach($tattoos as $tattoo)
-                            @if($tattoo->color == 'colored')
-                                <div class="col-md-4">
-                                    <div class="card my-3 mx-3">
-                                        <img src="{{ asset('storage/'.$tattoo->image) }}" class="card-img-top" width=100% height=auto alt="">
-                                        <div class="card-body">
-                                            <h4 class="card-title text-center"><strong>{{ $tattoo->name }}</strong></h4>
-                                            <p class="card-text">{{ $tattoo->description }}</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="{{ route('tattoo', $tattoo->id )}}" class="btn btn-info float-right text-white"> <i class="far fa-eye"></i> See More</a>
-                                        </div>
-                                    </div>                      
-                                </div>
-                            @endif
-                        @endforeach
-                    </div>
-                </div>
-
-                <div id="blandwh" class="tab-pane fade">
-                    <div class="row">
-                        @foreach($tattoos as $tattoo)
-                            @if($tattoo->color == 'b&w')
-                                <div class="col-md-4">
-                                    <div class="card my-3 mx-3">
-                                        <img src="{{ asset('storage/'.$tattoo->image) }}" class="card-img-top" width=100% height=auto alt="">
-                                        <div class="card-body">
-                                            <h4 class="card-title text-center"><strong>{{ $tattoo->name }}</strong></h4>
-                                            <p class="card-text">{{ $tattoo->description }}</p>
-                                        </div>
-                                        <div class="card-footer">
-                                            <a href="{{ route('tattoo', $tattoo->id )}}" class="btn btn-info float-right text-white"> <i class="far fa-eye"></i> See More</a>
-                                        </div>
-                                    </div>                      
-                                </div>
-                            @endif
                         @endforeach
                     </div>
                 </div>
@@ -86,9 +51,7 @@
   </div>
   
 
-    
-    
-
+ 
 @endsection
 
 

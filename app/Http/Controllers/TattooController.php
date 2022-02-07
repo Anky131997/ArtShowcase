@@ -71,7 +71,8 @@ class TattooController extends Controller
     public function show(Tattoo $tattoo)
     {
         $artist = User::where('id', $tattoo->artist_id)->first();
-        return view('show', compact('tattoo','artist'));
+        $types= Type::all();
+        return view('show', compact('tattoo','artist','types'));
     }
 
     /**

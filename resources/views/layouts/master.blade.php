@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Artifice</title>
+        <title>Artgalore</title>
         <link rel = "icon" href ="{{ asset('storage/faceLogo.png') }}" type = "image/x-icon">
 
         <!-- Fonts -->

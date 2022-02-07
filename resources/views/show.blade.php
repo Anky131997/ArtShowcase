@@ -42,9 +42,11 @@
                     <div class="col-md-2 pt-1">
                         <a href="https://wa.me/{{ $artist->number }}" style="color: #25D366;"><i class="fab fa-whatsapp fa-3x"></i></a>
                     </div>
-                    <div class="col-md-2 pt-1">
-                        <a href="https://www.instagram.com/{{ $artist->insta }}" style="color: #bc2a8d ;"><i class="fab fa-instagram fa-3x"></i></a>
-                    </div>
+                    @if($artist->insta != null)
+                        <div class="col-md-2 pt-1">
+                            <a href="https://www.instagram.com/{{ $artist->insta }}" style="color: #bc2a8d ;"><i class="fab fa-instagram fa-3x"></i></a>
+                        </div>
+                    @endif
                     @if($artist->youtube != null)
                         <div class="col-md-2 pt-1">
                             <a href="https://www.youtube.com/{{ $artist->youtube }}" style="color: #FF0000 ;"><i class="fab fa-youtube fa-3x"></i></a>

@@ -7,6 +7,7 @@ use App\Http\Requests\Types\CreateTypeRequest;
 use App\Http\Requests\Types\UpdateTypeRequest;
 
 use App\Type;
+use App\Tattoo;
 
 class TypeController extends Controller
 {
@@ -57,7 +58,11 @@ class TypeController extends Controller
      */
     public function show($id)
     {
-        //
+        $artType=Type::where('id', $id)->first();
+        $types= Type::all();
+        $arts = Tattoo::where('type_id', $id)->get();
+
+        return view('allTattoos', compact('arts','artType','types'));
     }
 
     /**

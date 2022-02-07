@@ -13,6 +13,7 @@ class WelcomeController extends Controller
     {
         $allTattoos = Tattoo::all();
         $tattoos = Tattoo::all();
+        $types= Type::all();
         $otherPage = 'nasa';
         $response = file_get_contents("https://instagram.com/artificetattoostudio/?__a=1");
         // if ($response !== false) {
@@ -22,6 +23,6 @@ class WelcomeController extends Controller
         //         $followedBy = $data['graphql']['user']['edge_followed_by']['count'];
         //     }
         // }
-        return view('welcome', compact('tattoos','allTattoos'));
+        return view('welcome', compact('tattoos','allTattoos','types'));
     }
 }

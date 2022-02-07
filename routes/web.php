@@ -33,13 +33,15 @@ Route::post('/upload', [UploadController::class, 'store']);
 
 Route::get('/profile', [UserViewController::class, 'profile'])->name('profile');
 
+Route::get('/artist/{id}', [UserViewController::class, 'artistProfile'])->name('artistProfile');
+
 Route::get('tattoos/{tattoo}',[TattooController::class, 'show'])->name('tattoo');
 
-Route::get('big-tattoos',[UserViewController::class, 'bigTattoos'])->name('bigTattoos');
-
-Route::get('small-tattoos',[UserViewController::class, 'smallTattoos'])->name('smallTattoos');
+Route::get('types/{type}',[TypeController::class, 'show'])->name('artbytype');
 
 Route::get('contact',[UserViewController::class, 'contact'])->name('contact');
+
+Route::get('artists',[UserViewController::class, 'artists'])->name('artists');
 
 Route::get('/adminpanel',[AdminPanelController::class, 'index'])->name('admin-panel');
 

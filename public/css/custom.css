@@ -142,3 +142,8 @@ a:link{
 #imgborder{
     border: 3px solid white;
 }
+
+#profile_card{
+    background-color:white;
+    color:black;
+}
