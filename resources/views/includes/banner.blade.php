@@ -37,7 +37,7 @@
                             <h5 class="text-white mt-3">Do Something Creative Everyday</h5>
                         </div>
                         <div class="col-md-12 mt-5 mb-5 text-center">
-                            <a href="#showcase" class="btn text-white" style="background-color:#00838f;">Take a Look at Our Work</a>
+                            <a href="#showcase" class="text-white">Take a Look at Our Work</a>
                         </div>
                     </div>
                 </div>

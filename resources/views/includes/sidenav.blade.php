@@ -40,10 +40,10 @@
                             @endif
                         @endauth
                         <div class="col-md-12 mt-5 text-center">
-                            <a href="#" class="text-body "><i class="fab fa-facebook fa-lg mx-3"></i></a>
-                            <a href="#" class="text-body "><i class="fab fa-whatsapp fa-lg mx-3"></i></a>
+                            <a href="https://www.facebook.com/ankan.polley.5/" class="text-body "><i class="fab fa-facebook fa-lg mx-3"></i></a>
+                            <a href="https://wa.me/8420667334" class="text-body "><i class="fab fa-whatsapp fa-lg mx-3"></i></a>
                             <a href="#" class="text-body "><i class="fab fa-instagram fa-lg mx-3"></i></a>
-                            <a href="#" class="text-body "><i class="fab fa-youtube fa-lg mx-3"></i></i></a>
+                            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-body "><i class="fab fa-youtube fa-lg mx-3"></i></i></a>
                         </div>
                     </div>
                 </div>

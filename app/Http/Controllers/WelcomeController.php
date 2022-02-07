@@ -11,7 +11,7 @@ class WelcomeController extends Controller
 {
     public function index()
     {
-        $allTattoos = Tattoo::all();
+        $arts = Tattoo::all();
         $tattoos = Tattoo::all();
         $types= Type::all();
         $otherPage = 'nasa';
@@ -23,6 +23,6 @@ class WelcomeController extends Controller
         //         $followedBy = $data['graphql']['user']['edge_followed_by']['count'];
         //     }
         // }
-        return view('welcome', compact('tattoos','allTattoos','types'));
+        return view('welcome', compact('tattoos','arts','types'));
     }
 }

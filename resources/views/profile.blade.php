@@ -94,6 +94,7 @@
                             <thead class="thead-dark">
                                 <tr>
                                     <th>Image</th>
+                                    <th>Category</th>
                                     <th>Uploaded</th>
                                     <th>Action</th>
                                 </tr>
@@ -101,7 +102,8 @@
                             <tbody>
                                     @foreach($arts as $art)
                                     <tr>
-                                        <td><img src="{{ 'storage/'. $art->image }}" style="border-radius:6px;" width=70px height=50x alt=""></td>
+                                        <td><img src="{{ 'storage/'. $art->image }}" style="border-radius:6px; object-fit: cover;" width=70px height=50x alt=""></td>
+                                        <td>{{ $art->type->name }}</td>
                                         <td> {{ today()->diffInDays($art->created_at->toDateString()) }} day(s) ago</td>
                                         <td><a href="{{ route('tattoo', $art->id )}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i></a></td>
                                     </tr>

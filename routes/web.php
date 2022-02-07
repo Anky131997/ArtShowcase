@@ -33,7 +33,7 @@ Route::post('/upload', [UploadController::class, 'store']);
 
 Route::get('/profile', [UserViewController::class, 'profile'])->name('profile');
 
-Route::get('/artist/{id}', [UserViewController::class, 'artistProfile'])->name('artistProfile');
+Route::get('artist/{user}', [UserViewController::class, 'artistProfile'])->name('artistProfile');
 
 Route::get('tattoos/{tattoo}',[TattooController::class, 'show'])->name('tattoo');
 
